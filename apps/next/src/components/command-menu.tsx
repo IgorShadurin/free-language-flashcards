@@ -545,7 +545,9 @@ const OptionComp: React.FC<OptionCompProps> = ({
     <Flex
       alignItems="center"
       p="4"
-      ref={(el) => (resultsRef.current[index] = el)}
+      ref={(el) => {
+        resultsRef.current[index] = el;
+      }}
       gap="4"
       h="72px"
       pos="relative"
