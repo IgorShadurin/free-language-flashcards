@@ -153,7 +153,7 @@ export const LeftNav: React.FC<LeftNavProps> = ({
               </NextLink>
               <MenuOption
                 icon={<IconCloudDownload size={20} />}
-                label="Import from Quizlet"
+                label="Import from Quizlet Export"
                 onClick={onImportClick}
               />
               <MenuDivider />

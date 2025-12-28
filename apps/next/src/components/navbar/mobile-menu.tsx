@@ -153,7 +153,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
                 </NextLink>
                 <MenuOption
                   icon={<IconCloudDownload size={20} />}
-                  label="Import from Quizlet"
+                  label="Import from Quizlet export"
                   onClick={onImportClick}
                 />
                 <MenuDivider />

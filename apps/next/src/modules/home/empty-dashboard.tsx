@@ -133,7 +133,7 @@ export const EmptyDashboard = () => {
               menuEventChannel.emit("openImportDialog");
             }}
           >
-            Import from Quizlet
+            Import from Quizlet export
           </Button>
         </Stack>
       </VStack>

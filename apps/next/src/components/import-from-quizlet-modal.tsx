@@ -263,9 +263,17 @@ export const ImportFromQuizletModal: React.FC<ImportFromQuizletModalProps> = ({
                     onClick={async () => {
                       setError("");
                       setImportStarted(Date.now());
-                      await fromUrl.mutateAsync({
-                        url,
-                      });
+                      try {
+                        await fromUrl.mutateAsync({
+                          url,
+                        });
+                      } catch (err) {
+                        const message =
+                          err instanceof Error
+                            ? err.message
+                            : "Import failed.";
+                        setError(message);
+                      }
                     }}
                   >
                     Import

@@ -118,7 +118,7 @@ export const ButtonArea = ({ onImportOpen }: ButtonAreaProps) => {
                 menuEventChannel.emit("openImportDialog", true);
               }}
             >
-              Import from Quizlet
+              Import from Quizlet export
             </Button>
           )}
         </HStack>
@@ -206,7 +206,7 @@ ButtonArea.Skeleton = function ButtonAreaSkeleton({
               leftIcon={<IconCloudDownload size={18} />}
               variant="outline"
             >
-              Import from Quizlet
+              Import from Quizlet export
             </Button>
           </Skeleton>
         )}{" "}

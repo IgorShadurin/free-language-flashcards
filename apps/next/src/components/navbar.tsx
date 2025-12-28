@@ -27,8 +27,8 @@ import LeftNav from "./navbar/left-nav";
 import MobileMenu from "./navbar/mobile-menu";
 import UserMenu from "./navbar/user-menu";
 
-const ImportFromQuizletModal = dynamic(
-  () => import("./import-from-quizlet-modal"),
+const ImportFromQuizletExportModal = dynamic(
+  () => import("./import-from-quizlet-export-modal"),
   { ssr: false },
 );
 const CreateFolderModal = dynamic(() => import("./create-folder-modal"), {
@@ -89,7 +89,7 @@ export const Navbar: React.FC = () => {
         }}
         childSetId={folderChildSetId}
       />
-      <ImportFromQuizletModal
+      <ImportFromQuizletExportModal
         isOpen={importModalOpen}
         onClose={() => {
           setImportModalOpen(false);

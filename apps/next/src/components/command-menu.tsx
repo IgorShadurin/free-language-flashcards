@@ -296,8 +296,8 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
       });
       total.push({
         icon: <IconCloudDownload />,
-        name: "Import From Quizlet",
-        label: "Import a study set from Quizlet.com",
+        name: "Import From Quizlet Export",
+        label: "Import a study set from Quizlet export",
         action: () => menuEventChannel.emit("openImportDialog"),
       });
       total.push({
