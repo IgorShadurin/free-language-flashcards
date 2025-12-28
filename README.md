@@ -1,15 +1,17 @@
 [![og:image](./apps/next/public/og-image.png)](https://quenti.io)
 
-The open-source Quizlet alternative.
+The open-source Quizlet alternative — Vercel-ready with PostgreSQL, now with
+Quizlet export import to avoid direct-site fetch (e.g., Cloudflare/HTTPS) errors.
 
 ## The Stack
 
 - [Next.js](https://nextjs.org)
+- [React](https://react.dev)
 - [tRPC](https://trpc.io)
 - [NextAuth](https://next-auth.js.org)
 - [Prisma](https://prisma.io)
 - [Chakra UI](https://chakra-ui.com)
-- [MySQL](http://mysql.org/)
+- [PostgreSQL](https://www.postgresql.org/) (Neon recommended for Vercel)
 - [Zustand](https://github.com/pmndrs/zustand)
 - [ClickHouse](https://clickhouse.tech/)
 
@@ -20,9 +22,8 @@ Get up and running by following these steps.
 ### Prerequisites
 
 - Node.js 18.x
-- MySQL
 - Bun
-- Docker and docker-compose _(recommended)_
+- PostgreSQL (Neon free tier works great)
 
 ### Setup
 
@@ -67,11 +68,10 @@ Get up and running by following these steps.
 
      ![ID and Secret Screenshot](https://files.readme.io/a136be9-GCPOAuthstep5.png)
 
-5. Start up a local MySQL database with
+5. Create a PostgreSQL database (Neon recommended)
 
-   ```sh
-   docker-compose -f docker-compose.mysql.yml up
-   ```
+   - Create a free Neon project
+   - Copy the connection string into `DATABASE_URL` in `.env`
 
 6. Push schema changes and generate the Prisma client
    ```sh
@@ -94,3 +94,12 @@ bun start
 ```
 
 Navigate to http://localhost:3000 and Quenti should be up and running!
+
+## Deploying to Vercel
+
+Quenti is ready to deploy on Vercel with PostgreSQL.
+
+1. Create a Vercel project from this repo.
+2. Add environment variables from `.env.example` in the Vercel dashboard.
+3. Use a Neon PostgreSQL database (free tier is fine) and set `DATABASE_URL`.
+4. Deploy.
