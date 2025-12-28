@@ -83,10 +83,12 @@ export const DisplayableTerm: React.FC<DisplayableTermProps> = ({ term }) => {
   const wordEditor = useEditor({
     ...editorConfig(term.rank + 1),
     content: editorInput(term as EditorTerm, "word"),
+    immediatelyRender: false,
   });
   const definitionEditor = useEditor({
     ...editorConfig(term.rank + 1),
     content: editorInput(term as EditorTerm, "definition"),
+    immediatelyRender: false,
   });
 
   const edit = api.terms.edit.useMutation({

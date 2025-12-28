@@ -156,6 +156,7 @@ export const EditAssignment = () => {
         class: "p-4 focus:outline-none",
       },
     },
+    immediatelyRender: false,
   });
 
   const reset = () => {

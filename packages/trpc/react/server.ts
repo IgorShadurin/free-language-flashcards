@@ -1,1 +1,1 @@
-export * from "@trpc/react-query/server";
+export { createServerSideHelpers } from "@trpc/react-query/server";

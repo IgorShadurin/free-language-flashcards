@@ -52,18 +52,47 @@ let config = {
       "@chakra-ui/react",
       "@tremor/react",
     ],
-    instrumentationHook: true,
-    // Tommy, I love you so much https://holocron.so/blog/optimizing-next.js-cold-starts-for-vercel
-    esmExternals: false,
+    turbo: {
+      resolveAlias: {
+        react: require.resolve("react"),
+        "react-dom": require.resolve("react-dom"),
+        "react/jsx-runtime": require.resolve("react/jsx-runtime"),
+        "react/jsx-dev-runtime": require.resolve("react/jsx-dev-runtime"),
+      },
+    },
+  },
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...(config.resolve.alias ?? {}),
+      react: require.resolve("react"),
+      "react-dom": require.resolve("react-dom"),
+      "react/jsx-runtime": require.resolve("react/jsx-runtime"),
+      "react/jsx-dev-runtime": require.resolve("react/jsx-dev-runtime"),
+    };
+    return config;
   },
   reactStrictMode: true,
-  swcMinify: true,
   i18n: {
     locales: ["en"],
     defaultLocale: "en",
   },
   images: {
-    domains,
+    remotePatterns: domains.map((domain) => {
+      const isUrl = domain.includes("://");
+      if (isUrl) {
+        const parsed = new URL(domain);
+        return {
+          protocol: parsed.protocol.replace(":", ""),
+          hostname: parsed.hostname,
+          pathname: "/**",
+        };
+      }
+      return {
+        protocol: "https",
+        hostname: domain,
+        pathname: "/**",
+      };
+    }),
   },
   transpilePackages: [
     "@quenti/auth",

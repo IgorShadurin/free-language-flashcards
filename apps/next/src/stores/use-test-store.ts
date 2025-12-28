@@ -105,22 +105,14 @@ export type TestStore = ReturnType<typeof createTestStore>;
 export const DEFAULT_PROPS: TestStoreProps = {
   settings: {
     questionCount: 20,
-    questionTypes: [
-      TestQuestionType.TrueFalse,
-      TestQuestionType.MultipleChoice,
-      TestQuestionType.Match,
-    ],
+    questionTypes: [TestQuestionType.Write],
     studyStarred: false,
     answerMode: "Word",
   },
   wordLanguage: "en",
   definitionLanguage: "en",
   questionCount: 20,
-  questionTypes: [
-    TestQuestionType.TrueFalse,
-    TestQuestionType.MultipleChoice,
-    TestQuestionType.Match,
-  ],
+  questionTypes: [TestQuestionType.Write],
   answerMode: "Word",
   allTerms: [],
   starredTerms: [],

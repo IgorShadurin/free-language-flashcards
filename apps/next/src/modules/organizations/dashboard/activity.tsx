@@ -23,8 +23,8 @@ import {
   SkeletonText,
   Spinner,
   VStack,
-  keyframes,
 } from "@chakra-ui/react";
+import { keyframes } from "@emotion/react";
 
 import { IconActivityHeartbeat, IconPointFilled } from "@tabler/icons-react";
 

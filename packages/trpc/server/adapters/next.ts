@@ -1,1 +1,1 @@
-export * from "@trpc/server/adapters/next";
+export { createNextApiHandler } from "@trpc/server/adapters/next";

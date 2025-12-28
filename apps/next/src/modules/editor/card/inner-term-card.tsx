@@ -106,6 +106,7 @@ export const InnerTermCardRaw: React.FC<InnerTermCardProps> = ({
   const wordEditor = useEditor({
     ...editorConfig(term.rank + 1),
     content: editorInput(term, "word"),
+    immediatelyRender: false,
     onUpdate: ({ editor }) => {
       setWordEmpty(editor.isEmpty);
     },
@@ -120,6 +121,7 @@ export const InnerTermCardRaw: React.FC<InnerTermCardProps> = ({
   const definitionEditor = useEditor({
     ...editorConfig(term.rank + 2),
     content: editorInput(term, "definition"),
+    immediatelyRender: false,
     onUpdate: ({ editor }) => {
       setDefinitionEmpty(editor.isEmpty);
     },

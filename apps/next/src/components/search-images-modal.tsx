@@ -23,9 +23,9 @@ import {
   Stack,
   Text,
   VStack,
-  keyframes,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { keyframes } from "@emotion/react";
 
 import { IconAlertCircle, IconCloudUpload } from "@tabler/icons-react";
 

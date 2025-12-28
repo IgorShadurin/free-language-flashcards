@@ -4,9 +4,11 @@ import {
   forwardRef,
 } from "@chakra-ui/react";
 
-export const Card = forwardRef<CardProps, "div">(({ children, ...props }) => {
+export const Card = forwardRef<CardProps, "div">(
+  ({ children, ...props }, ref) => {
   return (
     <ChakraCard
+      ref={ref}
       px="6"
       py="4"
       rounded="xl"
@@ -23,4 +25,5 @@ export const Card = forwardRef<CardProps, "div">(({ children, ...props }) => {
       {children}
     </ChakraCard>
   );
-});
+  },
+);

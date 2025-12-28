@@ -22,7 +22,12 @@ class Profanity {
     this.options = options || new ProfanityOptions();
     this.whitelist = new List(() => this.buildRegex());
     this.blacklist = new List(() => this.buildRegex());
-    this.blacklist.addWords(profaneWords);
+    const words = Array.isArray(profaneWords)
+      ? profaneWords
+      : Array.isArray((profaneWords as { default?: string[] }).default)
+        ? (profaneWords as { default: string[] }).default
+        : [];
+    this.blacklist.addWords(words);
   }
 
   exists(text: string): boolean {

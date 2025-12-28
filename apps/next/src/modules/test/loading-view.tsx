@@ -12,8 +12,8 @@ import {
   SlideFade,
   Text,
   VStack,
-  keyframes,
 } from "@chakra-ui/react";
+import { keyframes } from "@emotion/react";
 
 const rotateBlobs = keyframes({
   "0%": {

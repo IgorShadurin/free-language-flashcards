@@ -1,11 +1,26 @@
-import { useClickable } from "@chakra-ui/clickable";
-import {
-  type UseTabProps,
-  useTabsContext,
-  useTabsDescendant,
-} from "@chakra-ui/react";
-import { mergeRefs } from "@chakra-ui/react-use-merge-refs";
-import { callAllHandlers } from "@chakra-ui/shared-utils";
+import { type UseTabProps, useTabsContext, useTabsDescendant } from "@chakra-ui/react";
+const callAllHandlers =
+  <Args extends unknown[]>(
+    ...handlers: Array<((...args: Args) => void) | undefined>
+  ) =>
+  (...args: Args) => {
+    handlers.forEach((handler) => handler?.(...args));
+  };
+
+const mergeRefs =
+  <T>(...refs: Array<React.Ref<T> | undefined>) =>
+  (value: T) => {
+    refs.forEach((ref) => {
+      if (!ref) return;
+      if (typeof ref === "function") {
+        ref(value);
+      } else {
+        try {
+          (ref as React.MutableRefObject<T | null>).current = value;
+        } catch {}
+      }
+    });
+  };
 
 /**
  * Adapted from https://github.com/chakra-ui/chakra-ui/blob/main/packages/components/tabs/src/use-tabs.ts
@@ -36,18 +51,13 @@ export function useTab<P extends UseTabProps>(props: P) {
     }
   };
 
-  const clickableProps = useClickable({
-    ...htmlProps,
-    ref: mergeRefs(register, props.ref),
-    isDisabled,
-    isFocusable,
-    onClick: callAllHandlers(props.onClick, onClick),
-  });
+  const mergedRef = mergeRefs(register, props.ref);
 
   const type: "button" | "submit" | "reset" = "button";
 
   return {
-    ...clickableProps,
+    ...htmlProps,
+    ref: mergedRef,
     id: makeTabId(id, index),
     role: "tab",
     tabIndex: isSelected ? 0 : -1,
@@ -56,6 +66,7 @@ export function useTab<P extends UseTabProps>(props: P) {
     count: descendants.count(),
     "aria-selected": isSelected,
     "aria-controls": makeTabPanelId(id, index),
+    onClick: callAllHandlers(props.onClick, onClick),
     onFocus: isDisabled ? undefined : callAllHandlers(props.onFocus, onFocus),
   };
 }

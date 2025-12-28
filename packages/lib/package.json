@@ -22,14 +22,16 @@
     "@tiptap/html": "^2.1.12",
     "@tiptap/react": "^2.1.12",
     "dayjs": "^1.11.10",
-    "next": "^14.0.4",
-    "react": "^18.2.0"
+    "next": "^16.1.1"
   },
   "scripts": {
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix"
   },
   "devDependencies": {
-    "@types/react": "^18.2.43"
+    "@types/react": "^19.2.7"
+  },
+  "peerDependencies": {
+    "react": "^19.2.3"
   }
 }

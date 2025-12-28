@@ -97,6 +97,7 @@ export const NewAssignment = () => {
         class: "p-4 focus:outline-none",
       },
     },
+    immediatelyRender: false,
   });
 
   React.useEffect(() => {

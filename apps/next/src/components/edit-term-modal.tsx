@@ -49,10 +49,12 @@ export const EditTermModal: React.FC<EditTermModalProps> = ({
   const wordEditor = useEditor({
     ...editorConfig(),
     content: term ? editorInput(term as EditorTerm, "word") : "",
+    immediatelyRender: false,
   });
   const definitionEditor = useEditor({
     ...editorConfig(),
     content: term ? editorInput(term as EditorTerm, "definition") : "",
+    immediatelyRender: false,
   });
 
   React.useEffect(() => {

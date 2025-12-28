@@ -15,7 +15,6 @@
     "@tabler/icons-react": "^2.44.0",
     "@upstash/redis": "^1.22.1",
     "jsonwebtoken": "^9.0.2",
-    "react": "^18.2.0",
     "react-easy-crop": "^5.0.2",
     "sharp": "^0.32.6",
     "thumbhash": "^0.1.1",
@@ -23,9 +22,12 @@
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^9.0.5",
-    "@types/react": "^18.2.43"
+    "@types/react": "^19.2.7"
   },
   "trustedDepdenencies": [
     "sharp"
-  ]
+  ],
+  "peerDependencies": {
+    "react": "^19.2.3"
+  }
 }

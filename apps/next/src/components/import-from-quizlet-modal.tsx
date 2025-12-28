@@ -17,9 +17,9 @@ import {
   Spinner,
   Stack,
   Text,
-  keyframes,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { keyframes } from "@emotion/react";
 
 import { QUIZLET_IMPORT_REGEXP } from "../../../../packages/lib/constants/characters";
 import { effectChannel } from "../events/effects";

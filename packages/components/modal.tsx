@@ -19,34 +19,42 @@ import {
 } from "@chakra-ui/react";
 
 const Content = forwardRef<ModalContentProps, "div">(
-  ({ children, ...props }) => {
+  ({ children, ...props }, ref) => {
     const modalBg = useColorModeValue("white", "gray.800");
 
     return (
-      <ChakraModalContent rounded="xl" bg={modalBg} shadow="xl" {...props}>
+      <ChakraModalContent
+        ref={ref}
+        rounded="xl"
+        bg={modalBg}
+        shadow="xl"
+        {...props}
+      >
         {children}
       </ChakraModalContent>
     );
   },
 );
 
-const Body = forwardRef<StackProps, "div">(({ children, ...props }) => {
+const Body = forwardRef<StackProps, "div">(({ children, ...props }, ref) => {
   return (
     <ChakraModalBody py="8" px="10">
-      <Stack spacing="6" {...props}>
+      <Stack spacing="6" ref={ref} {...props}>
         {children}
       </Stack>
     </ChakraModalBody>
   );
 });
 
-const Heading = forwardRef<HeadingProps, "h1">(({ children, ...props }) => {
+const Heading = forwardRef<HeadingProps, "h1">(
+  ({ children, ...props }, ref) => {
   return (
-    <ChakraHeading size="lg" {...props}>
+    <ChakraHeading ref={ref} size="lg" {...props}>
       {children}
     </ChakraHeading>
   );
-});
+  },
+);
 
 const Divider = function ModalDivider() {
   const dividerColor = useColorModeValue("gray.200", "gray.700");
@@ -79,14 +87,25 @@ const Footer = function ModalFooter({
   );
 };
 
-const CloseButton = forwardRef<ModalCloseButtonProps, "button">((props) => {
-  return <ChakraModalCloseButton rounded="full" top={4} right={4} {...props} />;
-});
+const CloseButton = forwardRef<ModalCloseButtonProps, "button">(
+  (props, ref) => {
+    return (
+      <ChakraModalCloseButton
+        ref={ref}
+        rounded="full"
+        top={4}
+        right={4}
+        {...props}
+      />
+    );
+  },
+);
 
 export const Modal = forwardRef<ModalProps, "div">(
-  ({ isOpen, onClose, children, ...props }) => {
+  ({ isOpen, onClose, children, ...props }, ref) => {
     return (
       <ChakraModal
+        ref={ref}
         isOpen={isOpen}
         onClose={onClose}
         size="xl"

@@ -1,1 +1,15 @@
-export * from "../../../node_modules/.prisma/client";
+export {
+  Prisma,
+  PrismaClient,
+  ContainerType,
+  EntityType,
+  LeaderboardType,
+  LimitedStudySetAnswerMode,
+  MembershipRole,
+  MultipleAnswerMode,
+  StudiableMode,
+  StudySetAnswerMode,
+  StudySetCollabType,
+  StudySetVisibility,
+  UserType,
+} from "@prisma/client";
