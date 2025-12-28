@@ -7,7 +7,6 @@
     "@quenti/emails": "workspace:*",
     "@quenti/enterprise": "workspace:*",
     "@quenti/env": "workspace:*",
-    "@quenti/integrations": "workspace:*",
     "@quenti/payments": "workspace:*",
     "@quenti/prisma": "workspace:*",
     "inngest": "^3.0.2"

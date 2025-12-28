@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {
-      "@quenti/integrations": ["packages/integrations/index.ts"],
-      "@quenti/integrations/*": ["packages/integrations/*"]
-    },
     "target": "es2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
