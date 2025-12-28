@@ -35,7 +35,7 @@ Get up and running by following these steps.
 2. Go to the project folder
 
    ```sh
-   cd quenti
+   cd free-language-flashcards
    ```
 
 3. Install dependencies with bun
