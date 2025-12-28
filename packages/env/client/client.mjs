@@ -17,7 +17,9 @@ export const env = createEnv({
     NEXT_PUBLIC_TELEMETRY_KEY: z.string().optional(),
   },
   runtimeEnv: {
-    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+    NEXT_PUBLIC_APP_URL:
+      process.env.NEXT_PUBLIC_APP_URL ||
+      (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined),
     NEXT_PUBLIC_WEBSITE_URL: process.env.NEXT_PUBLIC_WEBSITE_URL,
     NEXT_PUBLIC_DEPLOYMENT: deployment.parse(
       process.env.NEXT_PUBLIC_DEPLOYMENT,
