@@ -24,7 +24,8 @@ export const checkUsernameHandler = async ({
   try {
     if (
       failsPrecondition(input.username) ||
-      (await importConsole("index")).usernameAvailable(input.username) === false
+      (await (await importConsole("index")).usernameAvailable(input.username)) ===
+        false
     ) {
       return { available: false, isProfane: false };
     }

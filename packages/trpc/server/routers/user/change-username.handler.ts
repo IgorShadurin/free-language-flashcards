@@ -28,7 +28,7 @@ export const changeUsernameHandler = async ({
   try {
     if (
       failsPrecondition(input.username) ||
-      !(await importConsole("index")).usernameAvailable(input.username)
+      !(await (await importConsole("index")).usernameAvailable(input.username))
     ) {
       throw new TRPCError({
         code: "BAD_REQUEST",
