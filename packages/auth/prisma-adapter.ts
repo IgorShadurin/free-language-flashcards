@@ -1,5 +1,5 @@
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import type { Adapter } from "next-auth/adapters";
+import type { Adapter, AdapterUser } from "next-auth/adapters";
 
 import { env as clientEnv } from "@quenti/env/client";
 import { env } from "@quenti/env/server";
@@ -9,7 +9,7 @@ import type { PrismaClient, UserType } from "@quenti/prisma/client";
 export function CustomPrismaAdapter(p: PrismaClient): Adapter {
   return {
     ...PrismaAdapter(p),
-    createUser: async (data) => {
+    createUser: async (data: AdapterUser) => {
       const name = data.name;
 
       let uniqueUsername = null;

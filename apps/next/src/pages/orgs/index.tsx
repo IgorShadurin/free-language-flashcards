@@ -54,7 +54,7 @@ export default function Organizations() {
         status: "error",
         icon: <AnimatedXCircle />,
         colorScheme: "red",
-        render: Toast,
+        render: (props) => <Toast {...props} />,
       });
 
       await router.push("/home");

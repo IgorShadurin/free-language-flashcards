@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, type MotionProps } from "framer-motion";
+import type React from "react";
 
 import { FrameLogo, Link } from "@quenti/components";
 
@@ -21,6 +22,10 @@ import {
 } from "@tabler/icons-react";
 
 import { menuEventChannel } from "../../events/menu";
+
+const MotionDiv = motion.div as React.ComponentType<
+  React.HTMLAttributes<HTMLDivElement> & MotionProps
+>;
 
 const ghost = {
   transition: {
@@ -86,15 +91,15 @@ export const EmptyDashboard = () => {
           zIndex={5}
         />{" "}
         <HStack spacing="-3" opacity="0.5" position="relative" zIndex={10}>
-          <motion.div {...studySet}>
+          <MotionDiv {...studySet}>
             <IconBooks size={30} strokeWidth="2px" opacity="0.8" />
-          </motion.div>
-          <motion.div {...ghost} className="p-3">
+          </MotionDiv>
+          <MotionDiv {...ghost} className="p-3">
             <FrameLogo width={20} height={20} />
-          </motion.div>
-          <motion.div {...folder}>
+          </MotionDiv>
+          <MotionDiv {...folder}>
             <IconFolder size={40} strokeWidth="2px" opacity="0.9" />
-          </motion.div>
+          </MotionDiv>
           <Box
             position="absolute"
             top="10"

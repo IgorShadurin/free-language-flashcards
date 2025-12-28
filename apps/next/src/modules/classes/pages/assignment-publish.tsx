@@ -65,7 +65,7 @@ export const AssignmentPublish = () => {
         status: "success",
         colorScheme: "green",
         icon: <AnimatedCheckCircle />,
-        render: Toast,
+        render: (props) => <Toast {...props} />,
       });
     },
   });

@@ -28,7 +28,7 @@ const MotionCard = motion(Card);
 export const TermCard = React.forwardRef<TermCardRef, TermCardProps>(
   function TermCardInner(props, ref) {
     const innerRef = React.useRef<HTMLDivElement>(null);
-    const inView = useInView(innerRef);
+    const inView = useInView(innerRef as React.RefObject<Element>);
     const visible = useSetEditorContext(
       (s) =>
         padNextFour(s.visibleTerms).includes(props.term.rank) ||

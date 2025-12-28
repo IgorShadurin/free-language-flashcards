@@ -116,7 +116,7 @@ export const InviteMemberModal: React.FC<InviteMemberModalProps> = ({
       title: "Invite link copied to clipboard",
       status: "success",
       icon: <AnimatedCheckCircle />,
-      render: Toast,
+      render: (props) => <Toast {...props} />,
     });
   };
 

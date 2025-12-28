@@ -15,7 +15,7 @@ interface TermWrapperProps {
 
 export const TermWrapper: React.FC<TermWrapperProps> = ({ term, creator }) => {
   const innerRef = React.useRef<HTMLDivElement>(null);
-  const inView = useInView(innerRef);
+  const inView = useInView(innerRef as React.RefObject<Element>);
 
   return (
     <Box ref={innerRef}>

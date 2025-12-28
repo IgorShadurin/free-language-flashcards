@@ -39,7 +39,7 @@ const schema = z.object({
 });
 
 interface DomainFormProps {
-  formRef?: React.RefObject<HTMLFormElement>;
+  formRef?: React.RefObject<HTMLFormElement | null>;
   onSuccess?: () => void | Promise<void>;
   onChangeLoading?: (loading: boolean) => void;
 }

@@ -40,7 +40,7 @@ export default function OrgPublish() {
         status: "error",
         colorScheme: "red",
         icon: <AnimatedXCircle />,
-        render: Toast,
+        render: (props) => <Toast {...props} />,
       });
     },
   });

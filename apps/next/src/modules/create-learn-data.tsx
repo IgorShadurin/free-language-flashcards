@@ -18,7 +18,7 @@ export const CreateLearnData: React.FC<React.PropsWithChildren> = ({
 }) => {
   const { terms, container } = useAuthedSet();
 
-  const storeRef = React.useRef<LearnStore>();
+  const storeRef = React.useRef<LearnStore | null>(null);
   if (!storeRef.current) {
     storeRef.current = createLearnStore();
 

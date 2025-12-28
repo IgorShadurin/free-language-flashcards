@@ -24,8 +24,10 @@ class Profanity {
     this.blacklist = new List(() => this.buildRegex());
     const words = Array.isArray(profaneWords)
       ? profaneWords
-      : Array.isArray((profaneWords as { default?: string[] }).default)
-        ? (profaneWords as { default: string[] }).default
+      : Array.isArray(
+            (profaneWords as unknown as { default?: string[] }).default,
+          )
+        ? (profaneWords as unknown as { default: string[] }).default
         : [];
     this.blacklist.addWords(words);
   }

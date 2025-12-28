@@ -20,7 +20,7 @@ export const CreateSortFlashcardsData: React.FC<React.PropsWithChildren> = ({
   const { terms, container } = useSetFolderUnison(true);
   const { termOrder } = React.useContext(RootFlashcardContext);
   const starredTerms = useContainerContext((s) => s.starredTerms);
-  const storeRef = React.useRef<SortFlashcardsStore>();
+  const storeRef = React.useRef<SortFlashcardsStore | null>(null);
 
   const initState = (
     round: number,

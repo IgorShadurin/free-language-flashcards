@@ -175,7 +175,7 @@ const ContextLayer: React.FC<React.PropsWithChildren<ContextLayerProps>> = ({
     matchStudyStarred: data.container.matchStudyStarred,
   });
 
-  const storeRef = React.useRef<ContainerStore>();
+  const storeRef = React.useRef<ContainerStore | null>(null);
   if (!storeRef.current) {
     storeRef.current = createContainerStore(
       status == "authenticated" ? getVal(data as AuthedData) : undefined,

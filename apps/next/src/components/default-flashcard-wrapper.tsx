@@ -108,15 +108,19 @@ export const DefaultFlashcardWrapper = () => {
   };
 
   return (
-    <motion.div
-      animate={controls}
-      style={{
-        width: "100%",
-        transformPerspective: 1500,
-        zIndex: 100,
+    <div
+      onClick={() => {
+        void flipCard();
       }}
-      onClick={flipCard}
     >
+      <motion.div
+        animate={controls}
+        style={{
+          width: "100%",
+          transformPerspective: 1500,
+          zIndex: 100,
+        }}
+      >
       <FlashcardShorcutLayer
         triggerFlip={flipCard}
         triggerPrev={onPrev}
@@ -136,6 +140,7 @@ export const DefaultFlashcardWrapper = () => {
           onRequestStar={() => starTerm(term)}
         />
       )}
-    </motion.div>
+      </motion.div>
+    </div>
   );
 };

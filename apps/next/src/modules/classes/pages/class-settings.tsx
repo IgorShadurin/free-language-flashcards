@@ -90,7 +90,7 @@ export const ClassSettings = () => {
         status: "success",
         colorScheme: "green",
         icon: <AnimatedCheckCircle />,
-        render: Toast,
+        render: (props) => <Toast {...props} />,
       });
     },
   });
@@ -100,7 +100,7 @@ export const ClassSettings = () => {
       toast({
         title: "Class deleted",
         icon: <AnimatedCheckCircle />,
-        render: Toast,
+        render: (props) => <Toast {...props} />,
       });
     },
   });
@@ -110,7 +110,7 @@ export const ClassSettings = () => {
       toast({
         title: "Left class successfully",
         icon: <AnimatedCheckCircle />,
-        render: Toast,
+        render: (props) => <Toast {...props} />,
       });
     },
   });

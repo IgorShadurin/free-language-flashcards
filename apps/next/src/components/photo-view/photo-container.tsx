@@ -19,8 +19,8 @@ export const PhotoContainer: React.FC<PhotoContainerProps> = ({
 
   const [originalWidth, setOriginalWidth] = React.useState<number>();
   const [originalHeight, setOriginalHeight] = React.useState<number>();
-  const originalWidthRef = React.useRef<number>();
-  const originalHeightRef = React.useRef<number>();
+  const originalWidthRef = React.useRef<number | undefined>(undefined);
+  const originalHeightRef = React.useRef<number | undefined>(undefined);
   originalWidthRef.current = originalWidth;
   originalHeightRef.current = originalHeight;
 
@@ -33,7 +33,7 @@ export const PhotoContainer: React.FC<PhotoContainerProps> = ({
   const [animate, setAnimate] = React.useState(false);
 
   const [scale, setScale] = React.useState(1);
-  const scaleRef = React.useRef<number>();
+  const scaleRef = React.useRef<number | undefined>(undefined);
   scaleRef.current = scale;
 
   const setBounded = () => {

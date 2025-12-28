@@ -62,7 +62,7 @@ export const UploadAvatarModal: React.FC<UploadAvatarModalProps> = ({
           status: "error",
           colorScheme: "red",
           icon: <AnimatedXCircle />,
-          render: Toast,
+          render: (props) => <Toast {...props} />,
         });
       }}
       onSubmitBuffer={(buffer) => {

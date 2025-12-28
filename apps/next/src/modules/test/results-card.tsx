@@ -101,10 +101,7 @@ export const ResultsCard = () => {
             value={perc}
             color="blue.300"
             trackColor={trackColor}
-            // @ts-expect-error type '{ base: string; sm: string; }' is not assignable...
-            size={{ base: "100px", sm: "140px" }}
-            w="max"
-            h="max"
+            boxSize={{ base: "100px", sm: "140px" }}
             thickness="4px"
             style={{
               strokeLinecap: "round",

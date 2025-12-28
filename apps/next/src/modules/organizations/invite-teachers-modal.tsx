@@ -80,7 +80,7 @@ export const InviteTeachersModal: React.FC<InviteTeachersModalProps> = ({
           status: "success",
           colorScheme: "green",
           icon: <AnimatedCheckCircle />,
-          render: Toast,
+          render: (props) => <Toast {...props} />,
         });
       }
 

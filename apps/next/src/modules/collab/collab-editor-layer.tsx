@@ -17,7 +17,7 @@ export const CollabEditorLayer: React.FC<
     data: RouterOutputs["collab"]["get"];
   }>
 > = ({ data, children }) => {
-  const storeRef = React.useRef<SetEditorStore>();
+  const storeRef = React.useRef<SetEditorStore | null>(null);
 
   const submission = data.submission;
 

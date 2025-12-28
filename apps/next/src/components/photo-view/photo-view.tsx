@@ -4,7 +4,7 @@ import { PhotoViewContext } from "./provider";
 
 interface PhotoViewProps {
   src: string;
-  children?: React.ReactElement;
+  children?: React.ReactElement<any>;
   borderRadius?: number;
 }
 
@@ -18,12 +18,12 @@ export const PhotoView: React.FC<PhotoViewProps> = ({
 
   if (children) {
     return Children.only(
-      cloneElement(children, {
+      cloneElement(children as React.ReactElement<any>, {
         onClick: (e: React.MouseEvent) => {
           e.stopPropagation();
           context.show(src, originRef.current!, borderRadius);
         },
-        ref: originRef,
+        ref: originRef as React.Ref<HTMLElement>,
       }),
     );
   }

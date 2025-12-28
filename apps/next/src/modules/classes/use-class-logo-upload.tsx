@@ -67,7 +67,7 @@ export const useClassLogoUpload = ({
         status: "error",
         colorScheme: "red",
         icon: <AnimatedXCircle />,
-        render: Toast,
+        render: (props) => <Toast {...props} />,
       });
     } else {
       setFile(file);

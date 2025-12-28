@@ -59,7 +59,7 @@ export const OrganizationLayout: React.FC<React.PropsWithChildren> = ({
         status: "error",
         icon: <AnimatedXCircle />,
         colorScheme: "red",
-        render: Toast,
+        render: (props) => <Toast {...props} />,
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

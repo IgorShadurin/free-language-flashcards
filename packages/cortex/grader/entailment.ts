@@ -23,7 +23,6 @@ const processEntailment = async (
     text.trim().replace("[CLS]", "").replace("[SEP]", "");
 
   const results = await Hf!.request({
-    // @ts-expect-error Argument of type
     inputs: `[CLS] ${sanitize(answer)} [SEP] ${sanitize(input)}`,
   });
   const sorted = (

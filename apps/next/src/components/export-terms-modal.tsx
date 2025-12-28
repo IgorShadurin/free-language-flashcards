@@ -68,7 +68,7 @@ export const ExportTermsModal: React.FC<ExportTermsModalProps> = ({
       status: "success",
       colorScheme: "green",
       icon: <AnimatedCheckCircle />,
-      render: Toast,
+      render: (props) => <Toast {...props} />,
     });
   };
 

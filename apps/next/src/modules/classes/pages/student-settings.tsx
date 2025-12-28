@@ -37,7 +37,7 @@ export const StudentSettings = () => {
       toast({
         title: "Left class successfully",
         icon: <AnimatedCheckCircle />,
-        render: Toast,
+        render: (props) => <Toast {...props} />,
       });
     },
   });

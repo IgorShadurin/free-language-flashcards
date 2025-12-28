@@ -102,7 +102,7 @@ export const Assignment = () => {
       status: "success",
       colorScheme: "green",
       icon: <AnimatedCheckCircle />,
-      render: Toast,
+      render: (props) => <Toast {...props} />,
     });
   };
 

@@ -17,6 +17,7 @@ import {
   forwardRef,
   useColorModeValue,
 } from "@chakra-ui/react";
+import type { ReactNode } from "react";
 
 const Content = forwardRef<ModalContentProps, "div">(
   ({ children, ...props }, ref) => {
@@ -78,7 +79,7 @@ const BodySeparator = function ModalBodySeparator() {
 const Footer = function ModalFooter({
   children,
 }: {
-  children?: JSX.Element | JSX.Element[];
+  children?: ReactNode;
 }) {
   return (
     <ChakraModalFooter px="10" py="6">
@@ -102,10 +103,9 @@ const CloseButton = forwardRef<ModalCloseButtonProps, "button">(
 );
 
 export const Modal = forwardRef<ModalProps, "div">(
-  ({ isOpen, onClose, children, ...props }, ref) => {
+  ({ isOpen, onClose, children, ...props }, _ref) => {
     return (
       <ChakraModal
-        ref={ref}
         isOpen={isOpen}
         onClose={onClose}
         size="xl"

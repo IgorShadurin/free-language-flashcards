@@ -15,7 +15,7 @@ export const CreateMatchData: React.FC<React.PropsWithChildren> = ({
   const starredTerms = useContainerContext((s) => s.starredTerms);
   const matchStudyStarred = useContainerContext((s) => s.matchStudyStarred);
 
-  const storeRef = React.useRef<MatchStore>();
+  const storeRef = React.useRef<MatchStore | null>(null);
   if (!storeRef.current) {
     storeRef.current = createMatchStore();
 

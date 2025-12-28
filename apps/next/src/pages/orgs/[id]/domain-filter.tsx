@@ -33,7 +33,9 @@ export default function OrgDomainFilter() {
   const { data: org } = useOrganization();
   const domain = getBaseDomain(org);
 
-  const ref = React.useRef<{ setFilter: (filter: string) => void }>();
+  const ref = React.useRef<{ setFilter: (filter: string) => void } | null>(
+    null,
+  );
   const formRef = React.useRef<HTMLFormElement | null>(null);
   const [filter, setFilter] = React.useState("");
   const [loading, setLoading] = React.useState(false);

@@ -51,7 +51,7 @@ export const ShareSetModal: React.FC<ShareSetModalProps> = ({
       status: "success",
       icon: <AnimatedCheckCircle />,
       colorScheme: "green",
-      render: Toast,
+      render: (props) => <Toast {...props} />,
     });
   };
 

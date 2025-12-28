@@ -40,7 +40,7 @@ export const ShareFolderModal: React.FC<ShareFolderModalProps> = ({
       status: "success",
       icon: <AnimatedCheckCircle />,
       colorScheme: "green",
-      render: Toast,
+      render: (props) => <Toast {...props} />,
     });
   };
 

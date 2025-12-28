@@ -33,7 +33,7 @@ export const LeaveOrganizationModal: React.FC<RemoveMemberModalProps> = ({
       toast({
         title: "Left organization",
         icon: <AnimatedCheckCircle />,
-        render: Toast,
+        render: (props) => <Toast {...props} />,
       });
 
       await router.push("/home");

@@ -181,7 +181,7 @@ export const EditAssignment = () => {
         status: "success",
         colorScheme: "green",
         icon: <AnimatedCheckCircle />,
-        render: Toast,
+        render: (props) => <Toast {...props} />,
       });
 
       await utils.assignments.get.invalidate();

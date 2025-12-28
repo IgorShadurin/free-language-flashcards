@@ -26,7 +26,7 @@ import { useOrganization } from "../../hooks/use-organization";
 import { getBaseDomain } from "./utils/get-base-domain";
 
 export interface DomainFilterFormProps {
-  formRef?: React.RefObject<HTMLFormElement>;
+  formRef?: React.RefObject<HTMLFormElement | null>;
   defaultFilter?: string;
   onSuccess?: () => void | Promise<void>;
   onChangeFilter?: (filter: string) => void;

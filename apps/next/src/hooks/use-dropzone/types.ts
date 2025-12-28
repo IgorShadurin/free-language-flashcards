@@ -59,8 +59,8 @@ export type DropzoneState = {
   isFileDialogActive: boolean;
   acceptedFiles: File[];
   fileRejections: FileRejection[];
-  rootRef: React.RefObject<HTMLElement>;
-  inputRef: React.RefObject<HTMLInputElement>;
+  rootRef: React.RefObject<HTMLElement | null>;
+  inputRef: React.RefObject<HTMLInputElement | null>;
 };
 
 export type DropzoneMethods = {

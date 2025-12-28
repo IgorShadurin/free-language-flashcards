@@ -65,7 +65,7 @@ export const useOrgLogoUpload = ({ onComplete }: UseOrgLogoUploadOptions) => {
         status: "error",
         colorScheme: "red",
         icon: <AnimatedXCircle />,
-        render: Toast,
+        render: (props) => <Toast {...props} />,
       });
     } else {
       setFile(file);

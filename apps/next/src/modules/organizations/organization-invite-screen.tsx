@@ -43,7 +43,7 @@ export const OrganizationInviteScreen = () => {
           status: "success",
           colorScheme: "green",
           icon: <AnimatedCheckCircle />,
-          render: Toast,
+          render: (props) => <Toast {...props} />,
         });
       } else {
         await router.push(`/home`);

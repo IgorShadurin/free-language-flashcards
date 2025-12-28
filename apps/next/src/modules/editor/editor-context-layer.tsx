@@ -21,7 +21,7 @@ export const EditorContextLayer: React.FC<
   }>
 > = ({ data, mode, children }) => {
   const router = useRouter();
-  const storeRef = React.useRef<SetEditorStore>();
+  const storeRef = React.useRef<SetEditorStore | null>(null);
 
   const [savedLocally, setSavedLocally] = React.useState(false);
 

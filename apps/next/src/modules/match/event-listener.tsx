@@ -6,7 +6,7 @@ import { isRectInBounds } from "@quenti/lib/area";
 import { type MatchItem, useMatchContext } from "../../stores/use-match-store";
 
 export const EventListener: React.FC<{
-  wrapper: React.RefObject<HTMLDivElement>;
+  wrapper: React.RefObject<HTMLDivElement | null>;
 }> = ({ wrapper }) => {
   const terms = useMatchContext((s) => s.terms);
   const roundQuestions = useMatchContext((s) => s.roundQuestions);
@@ -15,7 +15,7 @@ export const EventListener: React.FC<{
   const pickNewSpot = useMatchContext((s) => s.pickNewSpot);
   const setZIndex = useMatchContext((s) => s.setZIndex);
 
-  const grossTerms = React.useRef<MatchItem[]>();
+  const grossTerms = React.useRef<MatchItem[]>([]);
   grossTerms.current = terms;
 
   React.useEffect(() => {

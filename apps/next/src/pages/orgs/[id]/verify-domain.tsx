@@ -59,7 +59,7 @@ export default function OrgVerifyEmail() {
             status: "error",
             colorScheme: "red",
             icon: <AnimatedXCircle />,
-            render: Toast,
+            render: (props) => <Toast {...props} />,
           });
       },
     },
@@ -72,7 +72,7 @@ export default function OrgVerifyEmail() {
         status: "success",
         colorScheme: "green",
         icon: <AnimatedCheckCircle />,
-        render: Toast,
+        render: (props) => <Toast {...props} />,
       });
     },
     onError: (e) => {
@@ -82,7 +82,7 @@ export default function OrgVerifyEmail() {
           status: "error",
           colorScheme: "red",
           icon: <AnimatedXCircle />,
-          render: Toast,
+          render: (props) => <Toast {...props} />,
         });
       }
     },

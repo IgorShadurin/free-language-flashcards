@@ -266,7 +266,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
 const ShrinkableText: React.FC<{
   text: string;
   richText?: JSONContent;
-  container: React.RefObject<HTMLDivElement>;
+  container: React.RefObject<HTMLDivElement | null>;
 }> = ({ text, richText, container }) => {
   const { fontSize, ref } = useFitText({
     minFontSize: 50,

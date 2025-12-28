@@ -1,4 +1,9 @@
-import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  type MotionProps,
+  useAnimationControls,
+} from "framer-motion";
 import throttle from "lodash.throttle";
 import React from "react";
 
@@ -15,6 +20,10 @@ import { Flashcard } from "./flashcard";
 import { RootFlashcardContext } from "./root-flashcard-wrapper";
 import { SortFlashcardProgress } from "./sort-flashcard-progress";
 import { SortableShortcutLayer } from "./sortable-shortcut-layer";
+
+const MotionDiv = motion.div as React.ComponentType<
+  React.HTMLAttributes<HTMLDivElement> & MotionProps
+>;
 
 export const SortFlashcardWrapper = () => {
   const { id, container, entityType } = useSetFolderUnison();
@@ -191,7 +200,7 @@ export const SortFlashcardWrapper = () => {
         )}
         <AnimatePresence>
           {visibleFlashcards.map((t, i) => (
-            <motion.div
+            <MotionDiv
               id="sortable-flashcard"
               key={`flashcard-${t.id}-${i}`}
               animate={controls}
@@ -248,7 +257,7 @@ export const SortFlashcardWrapper = () => {
                 onRequestStar={() => starTerm(t)}
                 variant="sortable"
               />
-            </motion.div>
+            </MotionDiv>
           ))}
         </AnimatePresence>
       </Box>

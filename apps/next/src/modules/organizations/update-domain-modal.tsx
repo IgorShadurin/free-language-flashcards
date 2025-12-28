@@ -132,7 +132,7 @@ const VerifyEmailContainer: React.FC<VerifyEmailContainerProps> = ({
             status: "success",
             colorScheme: "green",
             icon: <AnimatedCheckCircle />,
-            render: Toast,
+            render: (props) => <Toast {...props} />,
           });
         }, 1000);
       },
@@ -150,7 +150,7 @@ const VerifyEmailContainer: React.FC<VerifyEmailContainerProps> = ({
             status: "error",
             colorScheme: "red",
             icon: <AnimatedXCircle />,
-            render: Toast,
+            render: (props) => <Toast {...props} />,
           });
       },
     },
@@ -163,7 +163,7 @@ const VerifyEmailContainer: React.FC<VerifyEmailContainerProps> = ({
         status: "success",
         colorScheme: "green",
         icon: <AnimatedCheckCircle />,
-        render: Toast,
+        render: (props) => <Toast {...props} />,
       });
     },
     onError: (e) => {
@@ -173,7 +173,7 @@ const VerifyEmailContainer: React.FC<VerifyEmailContainerProps> = ({
           status: "error",
           colorScheme: "red",
           icon: <AnimatedXCircle />,
-          render: Toast,
+          render: (props) => <Toast {...props} />,
         });
       }
     },

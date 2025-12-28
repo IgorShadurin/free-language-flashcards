@@ -104,7 +104,7 @@ export const OrganizationSettings = () => {
         status: "success",
         colorScheme: "green",
         icon: <AnimatedCheckCircle />,
-        render: Toast,
+        render: (props) => <Toast {...props} />,
       });
 
       await utils.organizations.get.invalidate();

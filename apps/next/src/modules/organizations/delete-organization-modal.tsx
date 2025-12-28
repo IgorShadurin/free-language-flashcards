@@ -42,7 +42,7 @@ export const DeleteOrganizationModal: React.FC<
         toast({
           title: "Your organization will be deleted in 48 hours",
           icon: <AnimatedCheckCircle />,
-          render: Toast,
+          render: (props) => <Toast {...props} />,
         });
         onClose();
       }

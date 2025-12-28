@@ -23,7 +23,7 @@ export const CreateTestData: React.FC<React.PropsWithChildren> = ({
   const { id, terms, wordLanguage, definitionLanguage, container } =
     useAuthedSet();
 
-  const storeRef = React.useRef<TestStore>();
+  const storeRef = React.useRef<TestStore | null>(null);
   if (!storeRef.current) {
     storeRef.current = createTestStore(undefined, {
       onAnswerDelegate: (index) => {
