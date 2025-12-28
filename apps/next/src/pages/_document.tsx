@@ -6,7 +6,7 @@ import { ColorModeScript } from "@chakra-ui/react";
 
 const Document = () => {
   return (
-    <Html>
+    <Html lang="en">
       <Head>
         <link
           rel="apple-touch-icon"
