@@ -1,10 +1,31 @@
+type QuizletIntegration = {
+  importFromUrl: (
+    url: string,
+    userId: string,
+    opts?: {
+      session?: boolean;
+      publishedTimestamp?: number;
+    },
+  ) => Promise<{ createdSetId: string; title: string; terms: number }>;
+};
+
+type QuizletInngestIntegration = {
+  importProfile: (
+    userId: string,
+    username: string,
+    step: unknown,
+  ) => Promise<void>;
+};
+
 export async function importIntegration(
   path: "quizlet",
-): Promise<typeof import("../../integrations/quizlet")>;
+): Promise<QuizletIntegration>;
 export async function importIntegration(
   path: "quizlet/inngest",
-): Promise<typeof import("../../integrations/quizlet/inngest")>;
-export async function importIntegration(path: string) {
+): Promise<QuizletInngestIntegration>;
+export async function importIntegration(
+  path: string,
+): Promise<QuizletIntegration | QuizletInngestIntegration> {
   switch (path) {
     case "quizlet":
       return await import("../../integrations/quizlet");
