@@ -1,3 +1,5 @@
+import * as quizletIntegration from "../integrations/quizlet";
+
 type QuizletIntegration = {
   importFromUrl: (
     url: string,
@@ -9,15 +11,11 @@ type QuizletIntegration = {
   ) => Promise<{ createdSetId: string; title: string; terms: number }>;
 };
 
-export async function importIntegration(
-  path: "quizlet",
-): Promise<QuizletIntegration>;
-export async function importIntegration(
-  path: string,
-): Promise<QuizletIntegration> {
+export function importIntegration(path: "quizlet"): QuizletIntegration;
+export function importIntegration(path: string): QuizletIntegration {
   switch (path) {
     case "quizlet":
-      return await import("../integrations/quizlet");
+      return quizletIntegration as QuizletIntegration;
     default:
       throw new Error(`Unknown integration: ${path}`);
   }

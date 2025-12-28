@@ -1,3 +1,6 @@
+import * as quizletIntegration from "../../integrations/quizlet";
+import * as quizletInngestIntegration from "../../integrations/quizlet/inngest";
+
 type QuizletIntegration = {
   importFromUrl: (
     url: string,
@@ -17,20 +20,18 @@ type QuizletInngestIntegration = {
   ) => Promise<void>;
 };
 
-export async function importIntegration(
-  path: "quizlet",
-): Promise<QuizletIntegration>;
-export async function importIntegration(
+export function importIntegration(path: "quizlet"): QuizletIntegration;
+export function importIntegration(
   path: "quizlet/inngest",
-): Promise<QuizletInngestIntegration>;
-export async function importIntegration(
+): QuizletInngestIntegration;
+export function importIntegration(
   path: string,
-): Promise<QuizletIntegration | QuizletInngestIntegration> {
+): QuizletIntegration | QuizletInngestIntegration {
   switch (path) {
     case "quizlet":
-      return await import("../../integrations/quizlet");
+      return quizletIntegration as QuizletIntegration;
     case "quizlet/inngest":
-      return await import("../../integrations/quizlet/inngest");
+      return quizletInngestIntegration as QuizletInngestIntegration;
     default:
       throw new Error(`Unknown integration: ${path}`);
   }
