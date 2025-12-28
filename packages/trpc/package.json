@@ -11,6 +11,7 @@
     "@quenti/enterprise": "workspace:*",
     "@quenti/env": "workspace:*",
     "@quenti/images": "workspace:*",
+    "@quenti/integrations": "workspace:*",
     "@quenti/inngest": "workspace:*",
     "@quenti/interfaces": "workspace:*",
     "@quenti/lib": "workspace:*",

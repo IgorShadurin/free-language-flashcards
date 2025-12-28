@@ -1,4 +1,4 @@
-import * as quizletIntegration from "../integrations/quizlet";
+import { importFromUrl } from "../integrations/quizlet";
 
 type QuizletIntegration = {
   importFromUrl: (
@@ -15,7 +15,7 @@ export function importIntegration(path: "quizlet"): QuizletIntegration;
 export function importIntegration(path: string): QuizletIntegration {
   switch (path) {
     case "quizlet":
-      return quizletIntegration as QuizletIntegration;
+      return { importFromUrl } as QuizletIntegration;
     default:
       throw new Error(`Unknown integration: ${path}`);
   }

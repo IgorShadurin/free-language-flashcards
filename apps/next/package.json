@@ -39,6 +39,7 @@
     "@quenti/env": "workspace:*",
     "@quenti/images": "workspace:*",
     "@quenti/inngest": "workspace:*",
+    "@quenti/integrations": "workspace:*",
     "@quenti/interfaces": "workspace:*",
     "@quenti/lib": "workspace:*",
     "@quenti/payments": "workspace:*",
