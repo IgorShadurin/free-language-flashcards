@@ -55,6 +55,12 @@ class Profanity {
     const escapedBlacklistWords = this.blacklist.words.map(escapeRegExp);
     const escapedWhitelistWords = this.whitelist.words.map(escapeRegExp);
 
+    if (!escapedBlacklistWords.length) {
+      // No blacklist means nothing should be matched as profane.
+      this.regex = /$a/;
+      return;
+    }
+
     const blacklistPattern = `${
       this.options.wholeWord ? "\\b" : ""
     }(${escapedBlacklistWords.join("|")})${
