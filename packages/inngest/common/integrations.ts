@@ -1,5 +1,5 @@
-import { importFromUrl } from "../../integrations/quizlet";
-import { importProfile } from "../../integrations/quizlet/inngest";
+import { importFromUrl } from "./quizlet";
+import { importProfile } from "./quizlet-inngest";
 
 type QuizletIntegration = {
   importFromUrl: (

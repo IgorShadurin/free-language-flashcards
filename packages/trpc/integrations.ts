@@ -1,4 +1,4 @@
-import { importFromUrl } from "../integrations/quizlet";
+import { importFromUrl } from "./integrations/quizlet";
 
 type QuizletIntegration = {
   importFromUrl: (
